@@ -8,6 +8,7 @@ const lastName = "Stark";
 var knownAs = "no one";
 
 console.log(window.firstName, window.lastName, window.knownAs);
+//output is undefined undefined "no one" why because let and const are block scope and var is a function scope
 ```
 
 2. Guess the output:
@@ -22,6 +23,7 @@ function fullName(a, b) {
 }
 
 console.log(window.fullName(firstName, lastName));
+//AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
@@ -33,6 +35,8 @@ fucntion addOne(num){
 var one = addOne(0);
 var two = addOne(1);
 console.log(one, two);
+
+//1 2
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
@@ -44,6 +48,8 @@ fucntion addOne(num){
 }
 var two = addOne(1);
 console.log(one, two);
+
+//1 2
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
@@ -55,6 +61,8 @@ fucntion addOne(num){
 }
 var two = addOne(1);
 console.log(two);
+//1
+//2
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
@@ -66,7 +74,8 @@ const addOne = num => {
 };
 var two = addOne(1);
 console.log(two);
-```
+
+//cannot access addone before initialization```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
@@ -77,6 +86,7 @@ const addOne = num => {
 };
 var two = addOne(1);
 console.log(two);
+//cannot access addone before initialization
 ```
 
 8. What will be the output of the following
@@ -89,7 +99,9 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); 
+
+//undefined
 ```
 
 9. What will be the output of the following
@@ -103,6 +115,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+//true 
 ```
 
 10. What will be the output of the following
@@ -116,6 +129,7 @@ function isAwesome() {
   console.log(awesome);
 }
 isAwesome();
+//undefined
 ```
 
 11. What will be the output of the following
@@ -130,6 +144,8 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+
+//AryaStark
 ```
 
 12. What will be the output of the following
@@ -144,6 +160,8 @@ function fullName(a, b) {
 }
 const name = fullName(firstName, lastName);
 console.log(name);
+
+//AryaStark
 ```
 
 13. Guess the output of the code below with a reason.
@@ -155,6 +173,8 @@ function sayHello() {
 sayHello();
 
 console.log(name);
+
+//AryaStark
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,6 +184,7 @@ if (true) {
   var name = "Arya Stark";
 }
 console.log(name);
+//Arya Stark
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,6 +194,7 @@ if (true) {
   let name = "Arya Stark";
 }
 console.log(name);
+//AryaStark
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,6 +204,7 @@ for (var i = 0; i < 20; i++) {
   //
 }
 console.log(i);
+// 20 because the increment  starts from 0 and end at 20 and console the i value which is 20;
 ```
 
 17. Guess the output of the code below with a reason.
@@ -191,6 +214,7 @@ for (let i = 0; i < 20; i++) {
   //
 }
 console.log(i);
+//i is not defined because let is a block scope and we are console out side of the function
 ```
 
 18. Guess the output of the code below with a reason.
@@ -200,6 +224,9 @@ for (var i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+// 20 "second"
+//20 "first"
+//reason  first print the console out side because inside the for loop setTimeout is there of 100ms later it prints.
 ```
 
 19. Guess the output of the code below with a reason.
@@ -209,6 +236,8 @@ for (let i = 0; i < 20; i++) {
   setTimeout(() => console.log(i, "first"), 100);
 }
 console.log(i, "second");
+
+//it console inside the forloop after 100ms and the console.log(i,"second") gets error because it is out side of the for loop and let is a block scope 
 ```
 
 20. Guess the output and the reason behind that.
@@ -220,6 +249,7 @@ function sample() {
   }
   console.log(username);
 }
+//undefined because the function is not called
 ```
 
 21. Guess the output and the reason behind that.
@@ -231,6 +261,7 @@ function sample() {
   }
   console.log(username);
 }
+//undefined because the function is not called
 ```
 
 22. Guess the output and the reason behind that.
@@ -244,6 +275,7 @@ function sample() {
   }
   console.log(username, "second");
 }
+//undefined because the function is not called
 ```
 
 23. Guess the output and the reason behind that.
@@ -257,6 +289,7 @@ function sample() {
   }
   console.log(username, "second");
 }
+//undefined because the function is not called
 ```
 
 24. Guess the output and the reason behind that.
@@ -270,6 +303,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+// Hello I am First
+// Hello I am Second
+// Hello I am Third
+// the arg.length is 3 and you use spread(...args) thats why it consoles three arguments 
 ```
 
 25. Guess the output and the reason behind that.
@@ -283,6 +320,10 @@ function sample(...args) {
 }
 
 sample("First", "Second", "Third");
+// Hello I am First
+// Hello I am Second
+// Hello I am Third
+// the arg.length is 3 and you use spread(...args) thats why it consoles three arguments 
 ```
 
 26. Guess the output and the reason behind that.
@@ -310,6 +351,8 @@ function outer() {
 }
 
 outer();
+//I love this movie called ${movie.toUpperCase()}
+//if you use the variable with $ symbol we should use backtics ``
 ```
 
 28. Guess the output and the reason behind that.
@@ -325,6 +368,9 @@ function outer() {
 }
 
 outer();
+
+//I love this movie called ${movie.toUpperCase()}
+//if you use the variable with $ symbol we should use backtics ``
 ```
 
 29. Guess the output and the reason behind that.
@@ -344,11 +390,16 @@ function outer() {
 }
 
 outer();
+
+//I love this movie called ${movie.toUpperCase()}
+//if you use the variable with $ symbol we should use backtics ``
 ```
 
 30. Execute all the functions inside `allFunctions` variable using any loop. (Hint: use for of loop functions are object)
 
 ```js
+var a = 46;
+var b = 23;
 const add = (a, b) => {
   return a + b;
 };
@@ -363,11 +414,14 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, sub, multiply, divide];
+allFunctions.forEach( x => console.log(x(a,b)));
 ```
 
 31. You have to pass 10 and 12 as initial value and find the final output when you pass the return value of one function as an input to the next function in the array `allFunctions`.
 
 ```js
+var a = 10;
+var b = 12;
 const add = (a, b) => {
   return a + b;
 };
@@ -382,4 +436,5 @@ const divide = (a, b) => {
 };
 
 let allFunctions = [add, add, add, add, add, sub, sub, multiply, divide];
+allFunctions.forEach(x => console.log(x(a,b)));
 ```
