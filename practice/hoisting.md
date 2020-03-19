@@ -6,18 +6,21 @@
 console.log(animal);
 var animal = "monkey";
 // Output or Error Message
+undefined
 ```
 
 ```js
 console.log(animal);
 let animal = "monkey";
 // Output or Error Message
+//cannot access animal before initialization
 ```
 
 ```js
 console.log(animal);
 const animal = "monkey";
 // Output or Error Message
+//cannot access animal before initialization
 ```
 
 ```js
@@ -26,6 +29,7 @@ function sayHello(msg) {
 }
 sayHello("Hey Everyone");
 // Output or Error Message
+//hey everyone
 ```
 
 ```js
@@ -33,6 +37,7 @@ sayHello("Hey Everyone");
 function sayHello(msg) {
   alert(msg);
 }
+//hey everyone
 // Output or Error Message
 ```
 
@@ -42,6 +47,7 @@ var sayHello = msg => {
   alert(msg);
 };
 // Output or Error Message
+//sayHello is not a function
 ```
 
 ```js
@@ -49,4 +55,5 @@ sayHello("Hey Everyone");
 let sayHello = msg => {
   alert(msg);
 };
+//cannot access sayHello before initialization
 ```
